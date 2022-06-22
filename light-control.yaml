@@ -1,0 +1,9 @@
+---
+- name: "Light Control"
+  gather_facts: no
+  hosts: localhost
+  tasks: 
+
+  - name: "Control light status"
+    ansible.builtin.uri:
+      url: "{{ hubitat_url }}/{{ hubitat_device_id }}/{{ hubitat_action }}?access_token={{ hubitat_access_token }}"
